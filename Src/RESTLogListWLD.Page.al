@@ -82,6 +82,8 @@ page 79911 "REST Log List WLD"
                 Caption = 'Show Request Message';
                 Image = ShowSelected;
                 Scope = "Repeater";
+                Promoted = true;
+                PromotedOnly = true;
                 ToolTip = 'Shows the request message';
                 trigger OnAction()
                 begin
@@ -94,6 +96,8 @@ page 79911 "REST Log List WLD"
                 Caption = 'Show Response Message';
                 Image = ShowSelected;
                 Scope = "Repeater";
+                Promoted = true;
+                PromotedOnly = true;
                 ToolTip = 'Shows the response message';
                 trigger OnAction()
                 begin
