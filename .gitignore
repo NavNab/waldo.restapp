@@ -4,3 +4,6 @@ launch.json
 cache*.json
 rad.json
 .ignore*
+.snapshots/
+.alcache/
+.alpackages/

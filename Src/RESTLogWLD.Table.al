@@ -2,15 +2,13 @@ table 79911 "REST Log WLD"
 {
     Access = Public;
     DataClassification = ToBeClassified;
-
     fields
     {
         field(1; "Entry No."; BigInteger)
         {
-            Caption = 'Entry No.';
             AutoIncrement = true;
+            Caption = 'Entry No.';
         }
-
         field(2; RequestUrl; Text[250])
         {
             Caption = 'RequestUrl';
@@ -60,9 +58,7 @@ table 79911 "REST Log WLD"
             Caption = 'User';
             DataClassification = EndUserIdentifiableInformation;
         }
-
     }
-
     keys
     {
         key(PK; "Entry No.")
@@ -70,7 +66,6 @@ table 79911 "REST Log WLD"
             Clustered = true;
         }
     }
-
     procedure ShowRequestMessage()
     var
         ShowRequestMessageMeth: Codeunit "ShowRequestMessage Meth WLD";
@@ -84,5 +79,4 @@ table 79911 "REST Log WLD"
     begin
         ShowResponseMessageMeth.ShowResponseMessage(Rec);
     end;
-
 }

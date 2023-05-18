@@ -5,7 +5,12 @@
         {
             "id": "AW0006",
             "action": "None",
-            "justification": "Should use the UseageCategory and AppArea"
+            "justification": "Should use the UsageCategory and AppArea"
+        },
+        {
+            "id": "AA0072",
+            "action": "None",
+            "justification": "None"
         }
     ]
 }

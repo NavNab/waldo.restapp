@@ -1,75 +1,73 @@
 page 79911 "REST Log List WLD"
 {
+    ApplicationArea = All;
+    Caption = 'REST Log List';
+    CardPageId = "REST Log Card WLD";
     PageType = List;
     SourceTable = "REST Log WLD";
-    Caption = 'REST Log List';
-    ApplicationArea = All;
-    UsageCategory = Lists;
-    CardPageId = "Rest Log Card WLD";
     SourceTableView = sorting("Entry No.") order(descending);
-
+    UsageCategory = Lists;
     layout
     {
-        area(content)
+        area(Content)
         {
             repeater(General)
             {
-                field("Entry No."; "Entry No.")
+                field("Entry No."; Rec."Entry No.")
                 {
-                    Tooltip = 'Specifies the Entry No.';
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the Entry No.';
                 }
-                field(RequestMethod; RequestMethod)
+                field(RequestMethod; Rec.RequestMethod)
                 {
-                    Tooltip = 'Specifies the RequestMethod';
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the RequestMethod';
                 }
-                field(RequestUrl; RequestUrl)
+                field(RequestUrl; Rec.RequestUrl)
                 {
-                    Tooltip = 'Specifies the RequestUrl';
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the RequestUrl';
                 }
-                field(ContentType; ContentType)
+                field(ContentType; Rec.ContentType)
                 {
-                    Tooltip = 'Specifies the ContentType';
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the ContentType';
                 }
-                field(DateTimeCreated; DateTimeCreated)
+                field(DateTimeCreated; Rec.DateTimeCreated)
                 {
-                    Tooltip = 'Specifies the DateTimeCreated';
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the DateTimeCreated';
                 }
-                field(Duraction; Duraction)
+                field(Duraction; Rec.Duraction)
                 {
-                    Tooltip = 'Specifies the Duraction';
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the Duraction';
                 }
-                field(RequestBodySize; RequestBodySize)
+                field(RequestBodySize; Rec.RequestBodySize)
                 {
-                    Tooltip = 'Specifies the RequestBodySize';
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the RequestBodySize';
                 }
-                field(RequestHeaders; RequestHeaders)
+                field(RequestHeaders; Rec.RequestHeaders)
                 {
-                    Tooltip = 'Specifies the RequestHeaders';
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the RequestHeaders';
                 }
-                field(ResponseHttpStatusCode; ResponseHttpStatusCode)
+                field(ResponseHttpStatusCode; Rec.ResponseHttpStatusCode)
                 {
-                    Tooltip = 'Specifies the ResponseHttpStatusCode';
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the ResponseHttpStatusCode';
                 }
-                field(ResponseSize; ResponseSize)
+                field(ResponseSize; Rec.ResponseSize)
                 {
-                    Tooltip = 'Specifies the ResponseSize';
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the ResponseSize';
                 }
-                field(User; User)
+                field(User; Rec.User)
                 {
-                    Tooltip = 'Specifies the User';
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the User';
                 }
-
 
             }
         }
@@ -80,31 +78,28 @@ page 79911 "REST Log List WLD"
         {
             action(ShowRequestMessage)
             {
-                Tooltip = 'Shows the request message';
                 ApplicationArea = All;
-                Image = ShowSelected;
                 Caption = 'Show Request Message';
+                Image = ShowSelected;
                 Scope = "Repeater";
-
+                ToolTip = 'Shows the request message';
                 trigger OnAction()
                 begin
-                    ShowRequestMessage();
+                    Rec.ShowRequestMessage();
                 end;
             }
             action(ShowResponseMessage)
             {
-                Tooltip = 'Shows the response message';
                 ApplicationArea = All;
-                Image = ShowSelected;
                 Caption = 'Show Response Message';
+                Image = ShowSelected;
                 Scope = "Repeater";
-
+                ToolTip = 'Shows the response message';
                 trigger OnAction()
                 begin
-                    ShowResponseMessage();
+                    Rec.ShowResponseMessage();
                 end;
             }
         }
     }
-
 }
