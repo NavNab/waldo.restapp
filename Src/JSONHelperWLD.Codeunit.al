@@ -3,8 +3,8 @@ codeunit 79910 "JSONHelper WLD"
     Access = Public;
 
     var
-        TokenKeyErr: Label 'Could not find a token with key %1', Comment = '%1 = Error';
-        TokenPathErr: Label 'Could not find a token with path %1', Comment = '%1 = Error';
+        TokenKeyErr: Label 'Could not find a token with key %1', Comment = '%1 = TokenKey';
+        TokenPathErr: Label 'Could not find a token with path %1', Comment = '%1 = Path';
         JsonObjectVar: JsonObject;
 
     procedure GetJsonObject(): JsonObject
@@ -35,7 +35,7 @@ codeunit 79910 "JSONHelper WLD"
 
     procedure InitializeJsonObjectFromText(JSONText: Text)
     var
-        InvalidJsonTextErr: Label 'Invalid JSON Text \ %1', Comment = '%1 = Text value';
+        InvalidJsonTextErr: Label 'Invalid JSON Text \ %1', Comment = '%1 = JSON text value';
     begin
         if not JsonObjectVar.ReadFrom(JSONText) then
             Error(InvalidJsonTextErr, JSONText);
