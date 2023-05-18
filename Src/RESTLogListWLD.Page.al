@@ -3,6 +3,7 @@ page 79911 "REST Log List WLD"
     ApplicationArea = All;
     Caption = 'REST Log List';
     CardPageId = "REST Log Card WLD";
+    Editable = false;
     PageType = List;
     SourceTable = "REST Log WLD";
     SourceTableView = sorting("Entry No.") order(descending);
@@ -68,7 +69,6 @@ page 79911 "REST Log List WLD"
                     ApplicationArea = All;
                     ToolTip = 'Specifies the User';
                 }
-
             }
         }
     }

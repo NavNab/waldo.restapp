@@ -89,8 +89,10 @@ codeunit 79911 "REST Helper WLD"
     begin
         RestBlob.CreateInStream(Instr);
         WebContent.ReadAs(Instr);
+
         ResponseBlob.CreateInStream(ResponseInstr);
         WebResponse.Content().ReadAs(ResponseInstr);
+
         RESTLog.Init();
         RESTLog.RequestUrl := CopyStr(WebRequest.GetRequestUri(), 1, MaxStrLen(RESTLog.RequestUrl));
         RESTLog.RequestMethod := CopyStr(WebRequest.Method(), 1, MaxStrLen(RESTLog.RequestMethod));
